@@ -41,8 +41,9 @@ function genLink(word){
 }
 
 function appendLink(list, $ele){
+	$ele.html("");
 	list.forEach(function(data){
-		$ele.append(genLink(data));
+		$ele.append(genLink(data)).append(",");
 	});
 }
 
@@ -155,7 +156,7 @@ function clickLink($ele){
 $(function(){
 	$vocForm.on("submit", submitform);
 	$("#voc_clear").on("click", clearDiv);
-	$("body").on("dbclick", ".link", function(){
+	$("body").on("dblclick", ".link", function(){
 		clickLink($(this));
 	});
 });
