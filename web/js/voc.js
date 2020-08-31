@@ -15,7 +15,7 @@ $vocContainer = $vocListContainer.find(".simplebar-content");
 
 $.getJSON("../../config/config.json", function(data){
 	port = data["port"].toString();
-	vocUrl = "http://localhost:"+port+"/lookup";
+	vocUrl = window.location.host + "/lookup";
 });
 
 function getData(url, func=null){

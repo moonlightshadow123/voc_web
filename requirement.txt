@@ -1,2 +1,2 @@
-spellchecker
+pyspellchecker
 peewee
