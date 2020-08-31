@@ -41,15 +41,21 @@
 		.col1{
 			font-weight: 100;
 		}
+		.smallfont{
+			font-size: small;
+		}
 		body{
 			font-weight: 200;
 		}
 		@media (max-width:1200px) {
 			body{
-				font-size: 4vw;
+				font-size: 5vw;
+			}
+			.smallfont{
+				font-size: 3vw;
 			}
 			.voc_grid{
-				grid-template-columns: 160px auto;
+				grid-template-columns: 200px auto;
 				border-bottom: 2px solid #e3e3e3;
 			}
 			.last_voc{
@@ -99,7 +105,7 @@
 				</div>
 				<div class="voc_grid norm"> <span class="col1">Definitions: </span> 
 					<ul class="defs">
-						<li class="def_template" style="border-bottom: 1px solid #e3e3e3;"><span class="fl" style="background-color:orange;color:#ffffff;font-size: small"></span> <span class="text"></span> <span class="vis" style="color:blue"></span></li>
+						<li class="def_template smallfont" style="border-bottom: 1px solid #e3e3e3;"><span class="fl" style="background-color:orange;color:#ffffff;"></span> <span class="text"></span> <span class="vis" style="color:blue"></span></li>
 					</ul> 
 				</div>
 				<div class="voc_grid voc"> <span class="col1">Stems:</span> <span class="stems">NONE</span></div>
@@ -110,7 +116,7 @@
 					<span class="col1">Note&nbsp;<span class="editBtn" style="cursor: pointer;"><i class="fas fa-edit"></i></span>&nbsp;:</span> 
 					<div>
 						<div class="mdcontent">NONE</div>
-						<span style="float: right;font-size: small;">Last Update:
+						<span class="smallfont" style="float: right;">Last Update:
 							<span class="last_update"></span>
 						</span>
 					</div>
