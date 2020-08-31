@@ -36,14 +36,14 @@ function getData(url, func=null){
 }
 
 function genLink(word){
-	var $span = $('<span class="link" style="padding:0px 5px"></span>').text(word);
+	var $span = $('<span class="link" ></span>').text(word);
 	return $span;
 }
 
 function appendLink(list, $ele){
 	$ele.html("");
 	list.forEach(function(data){
-		$ele.append(genLink(data)).append(",");
+		$ele.append(genLink(data)).append(", ");
 	});
 }
 
