@@ -155,7 +155,7 @@ function clickLink($ele){
 $(function(){
 	$vocForm.on("submit", submitform);
 	$("#voc_clear").on("click", clearDiv);
-	$("body").on("click", ".link", function(){
+	$("body").on("dbclick", ".link", function(){
 		clickLink($(this));
 	});
 });
