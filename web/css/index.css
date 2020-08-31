@@ -1,0 +1,49 @@
+input, select, button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+	padding: 3px;
+}
+.blue:hover{
+	background-color: #1010E3;
+	color: #ffffff;
+	cursor: pointer;
+	transition: 0.3s;
+}
+a:not(.mdcontent a){
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+.info{
+    box-shadow: 0 2px 8px -2px gray;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem;
+    margin-bottom: 10px;
+}
+.active{
+	background-color: #1010E3;
+	color: #ffffff;
+}
+.listcontainer{
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 4px;
+}
+.voc_template{
+	border: 1px solid #e3e3e3;
+	box-shadow: 0 2px 8px -2px gray;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.aca_template{
+	border: 1px solid #e3e3e3;
+	box-shadow: 0 2px 8px -2px gray;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyDict</title>
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+	<link rel="stylesheet" href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/simplebar@5.2.1/dist/simplebar.min.js"></script>
+	<script src="https://kit.fontawesome.com/dea24a676b.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+	<script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
+	<style type="text/css">
+		#main{
+		   /* grid-gap: 10px;
+		    display: grid;
+		    grid-template-columns: 1fr 1fr;*/
+		}
+		.voc_grid{
+			grid-gap: 10px;
+		    display: grid;
+		    grid-template-columns: 100px auto;
+		    border-bottom: 1px solid #e3e3e3;
+		}
+		.defs{
+		    list-style-type: none;
+		    padding: 0px;
+		    margin: 0px;
+		}
+		.def_template{
+			padding: 0px;
+		}
+		.col1{
+			font-weight: 100;
+		}
+		body{
+			font-weight: 200;
+		}
+	</style>
+</head>
+<body>
+<div id="msgbox" class="" style="display:none;box-shadow: 0 2px 8px -2px gray;margin-bottom: 10px;">
+    <span id="msgCloseBtn" class="closebtn" >&times;</span>
+    <span>Msg:</span> <strong id="msg">Danger!</strong>
+</div>
+<div id="modal" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="header"><span style="">This is a modal.</span> <span class="close modalCloseBtn">&times;</span> </div>
+        <div id="editContainer" style="">
+            <div id="editor" style="margin-bottom: 20px;height: 50vh;"></div>
+        </div>
+        <div class="footer">
+    	   <button class="confirm" id="textConfirm">Confirm</button>
+    	   <button class="cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="main">
+	<div id="vocContainer" class="container">
+		<div style="padding: 20px; box-shadow: 0 2px 8px -2px gray;">
+			<form id="vocForm">
+				<label style="margin-right: 20px;border: 1px solid black; color:#ffffff; background-color: #000000"><strong>VOC</strong></label>
+				
+				<label id="voc_clear" class="blue" style="box-shadow: 0 2px 8px -2px gray; float: right; padding: 3px;cursor: pointer;"><i class="far fa-trash-alt"></i></label>
+				<button id="voc_lookup" class="blue" style="box-shadow: 0 2px 8px -2px gray; float: right;margin-right: 10px;"><i class="fas fa-search"></i></button>
+				<input type="text" name="word" style="width: 300px; border: 1px solid #d3d3d3;float: right;margin-right: 10px;">
+			</form>
+		</div>
+		<div id="vocListContainer">
+			<div class="voc_template">
+				<div class="voc_grid sc"> <span class="col1">Msg:</span> <span class="content">NONE</span></div>
+				<div class="voc_grid voc"> 
+					<span class="col1">Word:</span> 
+					<div>
+						<span class="word" style="font-weight: 1000;padding-right: 10px;"></span>
+						<audio class="audio" ><source type="audio/wav"></audio>
+					</div>
+				</div>
+				<div class="voc_grid norm"> <span class="col1">Definitions: </span> 
+					<ul class="defs">
+						<li class="def_template" style="border-bottom: 1px solid #e3e3e3;"><span class="fl" style="background-color:orange;color:#ffffff;font-size: small"></span> <span class="text"></span> <span class="vis" style="color:blue"></span></li>
+					</ul> 
+				</div>
+				<div class="voc_grid voc"> <span class="col1">Stems:</span> <span class="stems">NONE</span></div>
+				<div class="voc_grid voc"> <span class="col1">Synonyms:</span> <span class="syns">NONE</span></div>
+				<div class="voc_grid voc" style="border-bottom: 2px dashed #e3e3e3;"> <span class="col1">Antonyms:</span> <span class="ants">NONE</span></div>
+				<!--<hr style="border-top: 2px dashed #e3e3e3;">-->
+				<div class="voc_grid orm" style="padding-top: 5px;"> 
+					<span class="col1">Note&nbsp;<span class="editBtn" style="cursor: pointer;"><i class="fas fa-edit"></i></span>&nbsp;:</span> 
+					<div>
+						<div class="mdcontent">NONE</div>
+						<span style="float: right;font-size: small;">Last Update:
+							<span class="last_update"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/voc.js"></script>
+<script type="text/javascript" src="../js/modal.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
