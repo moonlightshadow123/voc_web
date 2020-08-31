@@ -61,7 +61,7 @@ function genDiv(res){
 		}
 		//$voc.find(".audio").find("source").attr("src", audio).closest(".audio")[0].play();
 		genDefs($voc.find(".defs"), data["defs"]);
-		$voc.find(".stems").text(stems);
+		$voc.find(".stems").text(stems.split(",").join(", "));
 		if(data["syns"]) $voc.find(".syns").text(syns.join(", "));
 		if(data["ants"]) $voc.find(".ants").text(ants.join(", "));
 	}
