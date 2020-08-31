@@ -35,6 +35,17 @@ function getData(url, func=null){
 	});
 }
 
+function genLink(word){
+	var $span = $('<span class="link" style="padding:0px 5px"></span>').text(word);
+	return $span;
+}
+
+function appendLink(list, $ele){
+	list.forEach(function(data){
+		$ele.append(genLink(data));
+	});
+}
+
 function genDiv(res){
 	var data = res["voc"];
 	var sc = res["sc"];
@@ -61,9 +72,12 @@ function genDiv(res){
 		}
 		//$voc.find(".audio").find("source").attr("src", audio).closest(".audio")[0].play();
 		genDefs($voc.find(".defs"), data["defs"]);
-		$voc.find(".stems").text(stems.join(", "));
-		if(data["syns"]) $voc.find(".syns").text(syns.join(", "));
-		if(data["ants"]) $voc.find(".ants").text(ants.join(", "));
+		//$voc.find(".stems").text(stems.join(", "));
+		//if(data["syns"]) $voc.find(".syns").text(syns.join(", "));
+		//if(data["ants"]) $voc.find(".ants").text(ants.join(", "));
+		if(stems != null) appendLink(stems, $voc.find(".stems"));
+		if(syns != null) appendLink(syns, $voc.find(".syns"));
+		if(ants != null) appendLink(ants, $voc.find(".ants"));
 	}
 	if(sc!=null)
 		$voc.find(".sc .content").html(sc['error'] + "Possible Candidates: <strong>" + sc["candi"] + "</strong>");
@@ -131,7 +145,17 @@ function submitform(e){
 	return false;
 }
 
+function clickLink($ele){
+	var word = $ele.text();
+	console.log(word);
+	$vocForm.find('input[name="word"]').val(word);
+	submitform();
+}
+
 $(function(){
 	$vocForm.on("submit", submitform);
 	$("#voc_clear").on("click", clearDiv);
+	$("body").on("click", ".link", function(){
+		clickLink($(this));
+	});
 });
