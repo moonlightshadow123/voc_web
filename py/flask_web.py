@@ -30,6 +30,7 @@ def staticp(filename):
 def lookup():
     word = request.args.get('word', default='', type=str)
     print(word)
+    word = word.lower().strip()
     res = voc.lookup(word)
     res["orm"] = orm.lookup(word)
     return jsonify(res)
