@@ -27,6 +27,9 @@
 		    grid-template-columns: 100px auto;
 		    border-bottom: 1px solid #e3e3e3;
 		}
+		.last_voc{
+			border-bottom: 2px dashed #e3e3e3;
+		}
 		.defs{
 		    list-style-type: none;
 		    padding: 0px;
@@ -43,7 +46,14 @@
 		}
 		@media (max-width:1200px) {
 			body{
-				font-size: 200%;
+				font-size: 4vw;
+			}
+			.voc_grid{
+				grid-template-columns: 160px auto;
+				border-bottom: 2px solid #e3e3e3;
+			}
+			.last_voc{
+				border-bottom: 5px dashed #e3e3e3;
 			}
 		}
 	</style>
@@ -94,7 +104,7 @@
 				</div>
 				<div class="voc_grid voc"> <span class="col1">Stems:</span> <span class="stems">NONE</span></div>
 				<div class="voc_grid voc"> <span class="col1">Synonyms:</span> <span class="syns">NONE</span></div>
-				<div class="voc_grid voc" style="border-bottom: 2px dashed #e3e3e3;"> <span class="col1">Antonyms:</span> <span class="ants">NONE</span></div>
+				<div class="voc_grid last_voc voc" > <span class="col1">Antonyms:</span> <span class="ants">NONE</span></div>
 				<!--<hr style="border-top: 2px dashed #e3e3e3;">-->
 				<div class="voc_grid orm" style="padding-top: 5px;"> 
 					<span class="col1">Note&nbsp;<span class="editBtn" style="cursor: pointer;"><i class="fas fa-edit"></i></span>&nbsp;:</span> 
