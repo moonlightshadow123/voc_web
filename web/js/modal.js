@@ -40,7 +40,7 @@ $confirm.click(function(){
 		type: "POST",
 		url: "/update",
 		dataType: "json",
-		data: "word=" + word + "&note=" + codemirror.getValue()//quill.getText(),
+		data: "word=" + word + "&note=" + codemirror.getValue(),//quill.getText(),
 		success: function(data){
 			console.log(data);
 			if(data["res"] == true){
