@@ -13,7 +13,14 @@
 	<script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.57.0/codemirror.min.css" integrity="sha512-/BlxZbYLtYGExexketXsTi47eHp+r2kTeq2OHecQPZlfbc7WFXVrwbVW9HOYjI6c9Ti+P60ASmVLxittZ0EBGw==" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.57.0/codemirror.min.js" integrity="sha512-K8GMktcEqOI28I3f5C6kraFm1F4wVLvnBxGU+imS/zOLT1COAT799Ln4DJyAbpdyNt6LgMIWcwy4ptCYXCIDqA==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.57.0/mode/clike/clike.min.js" integrity="sha512-HT3t3u7HfQ7USbSZa0Tk5caEnUfO8s58OWqMBwm96xaZAbA17rpnXXHDefR8ixVmSSVssbOv3W3OMh6mNX/XuQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.57.0/mode/markdown/markdown.min.js" integrity="sha512-i0WWgBhBBkoMBlFQAsWUqSGwbGx6ZRKHJqGvuLdAl1qu1SDSyxJmwPAiVSPkzGqz1TM64yiH7b8sCUjNeoW8Kw==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.57.0/theme/monokai.min.css" integrity="sha512-R6PH4vSzF2Yxjdvb2p2FA06yWul+U0PDDav4b/od/oXf9Iw37zl10plvwOXelrjV2Ai7Eo3vyHeyFUjhXdBCVQ==" crossorigin="anonymous" />
+
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
 	<style type="text/css">
 		#main{
@@ -83,7 +90,8 @@
     <div class="modal-content">
         <div class="header"><span style="">This is a modal.</span> <span class="close modalCloseBtn">&times;</span> </div>
         <div id="editContainer" style="">
-            <div id="editor" style="margin-bottom: 20px;height: 50vh;"></div>
+            <!--<div id="editor" style="margin-bottom: 20px;height: 50vh;"></div>-->
+            <textarea id="codemirror"></textarea>
         </div>
         <div class="footer">
     	   <button class="confirm" id="textConfirm">Confirm</button>

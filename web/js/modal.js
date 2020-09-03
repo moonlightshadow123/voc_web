@@ -12,11 +12,18 @@ var $cur_note_content;
 var $cur_orm;
 
 var $editor = $("#editor");
+var $codemirror = $('#codemirror');
 var quill = new Quill('#editor', {theme: 'snow', formats:[]});
+var codemirror = CodeMirror.fromTextArea($("#codemirror")[0],{
+                mode:"markdown", 
+                lineNumbers:true,
+                theme: "monokai"
+        });
 //var $
 $("body").on("click",".editBtn", function(){
 	word = $(this).attr("data-word");
-	quill.setText($(this).attr("data-note"));
+	//quill.setText($(this).attr("data-note"));
+	codemirror.setValue($(this).attr("data-note"));
 	$cur_edit_btn = $(this);
 	$cur_note_content = $(this).closest(".orm").find(".mdcontent");
 	$cur_orm = $(this).closest(".orm");
@@ -33,7 +40,7 @@ $confirm.click(function(){
 		type: "POST",
 		url: "/update",
 		dataType: "json",
-		data: "word=" + word + "&note=" + quill.getText(),
+		data: "word=" + word + "&note=" + codemirror.getValue()//quill.getText(),
 		success: function(data){
 			console.log(data);
 			if(data["res"] == true){
