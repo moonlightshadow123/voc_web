@@ -24,6 +24,7 @@ $("body").on("click",".editBtn", function(){
 	word = $(this).attr("data-word");
 	//quill.setText($(this).attr("data-note"));
 	codemirror.getDoc().setValue($(this).attr("data-note"));
+	codemirror.refresh();
 	$cur_edit_btn = $(this);
 	$cur_note_content = $(this).closest(".orm").find(".mdcontent");
 	$cur_orm = $(this).closest(".orm");
