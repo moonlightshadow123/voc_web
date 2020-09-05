@@ -28,7 +28,7 @@ $("body").on("click",".editBtn", function(){
 	$cur_edit_btn = $(this);
 	$cur_note_content = $(this).closest(".orm").find(".mdcontent");
 	$cur_orm = $(this).closest(".orm");
-	$modal.fadeIn();
+	$modal.css("display", "flex").hide().fadeIn();
 });
 
 $modalCloseBtn.click(function(){
